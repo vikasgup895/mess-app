@@ -12,7 +12,6 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 15px;
     max-width: 1200px;
     margin: 0 auto;
     text-align: left; /* Ensure left alignment of content */
@@ -22,8 +21,7 @@ footer {
 .footer-section {
     flex: 1;
     min-width: 150px; /* Further reduced min-width for smaller screens */
-    margin-bottom: 10px;
-    padding-left: 10px; /* Reduced padding */
+    margin-bottom: 10px; /* Reduced padding */
 }
 
 .footer-section h3 {

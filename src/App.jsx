@@ -2,11 +2,12 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import Home from './Components/Home'; // Import Home component
+import Home from './Components/Home'; 
+//import Adminlogin from './Components/adminlogin';
+//import UserLogin from './Components/Userlogin';
 
 // Placeholder components for other routes
 const UserLogin = () => <div>User Login Page</div>;
-const AdminLogin = () => <div>Admin Login Page</div>;
 const Breakfast = () => <div>Breakfast Menu</div>;
 const Lunch = () => <div>Lunch Menu</div>;
 const Snacks = () => <div>Snacks Menu</div>;
@@ -31,8 +32,8 @@ const App = () => {
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/user-login" element={<UserLogin />} />
-        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/Userlogin" element={<UserLogin />} />
+        <Route path="/admin-login" element={<Adminlogin />} /> {/* Directly use the imported Adminlogin */}
         <Route path="/breakfast" element={<Breakfast />} />
         <Route path="/lunch" element={<Lunch />} />
         <Route path="/snacks" element={<Snacks />} />
