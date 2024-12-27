@@ -1,0 +1,183 @@
+/* General Footer Styling */
+footer {
+    background-color: #282c34;
+    color: #f0f0f0;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+/* Footer Content Layout */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left; /* Ensure left alignment of content */
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1;
+    min-width: 150px; /* Further reduced min-width for smaller screens */
+    margin-bottom: 10px;
+    padding-left: 10px; /* Reduced padding */
+}
+
+.footer-section h3 {
+    font-size: 1.2em; /* Reduced font size for smaller devices */
+    margin-bottom: 10px; /* Reduced margin */
+    color: #f8b400;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f8b400; /* Reduced underline thickness */
+    display: inline-block;
+    padding-bottom: 5px;
+    text-align: left;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-links li {
+    margin-bottom: 6px; /* Reduced space between links */
+}
+
+.footer-links a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 12px; /* Further reduced font size */
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f8b400;
+}
+
+/* Contact Info */
+.footer-contact p {
+    margin: 3px 0; /* Reduced margin */
+    font-size: 12px; /* Further reduced font size */
+    color: #bbb;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact i {
+    margin-right: 6px;
+    color: #f8b400;
+    font-size: 14px; /* Reduced icon size */
+}
+
+/* Social Media Links */
+.footer-social {
+    margin-top: 5px;
+    text-align: center; /* Centered social icons */
+}
+
+.social-link {
+    display: inline-block;
+    margin: 0 8px; /* Reduced margin between icons */
+    color: #f0f0f0;
+    font-size: 18px; /* Reduced icon size */
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-link:hover {
+    color: #f8b400;
+    transform: scale(1.1);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #444;
+    margin-top: 10px; /* Reduced margin */
+    padding-top: 5px; /* Reduced padding */
+    font-size: 10px; /* Further reduced font size */
+    color: #bbb;
+}
+
+.footer-bottom a {
+    color: #f8b400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    footer {
+        padding: 0px; /* Further reduced padding */
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 3px; /* Reduced gap between sections */
+        margin-bottom: 0px;
+    }
+
+    .footer-section {
+        text-align: center;
+        padding-left: 0;
+        margin-top: 0%;
+    }
+
+    .footer-section h3 {
+        font-size: 1.1em; /* Smaller headings */
+        margin-bottom: 5px; /* Reduced margin to decrease gap */
+    }
+
+    .footer-links a {
+        font-size: 12px; /* Even smaller font size */
+    }
+
+    .footer-contact p {
+        font-size: 12px; /* Smaller contact text */
+    }
+
+    .footer-bottom {
+        font-size: 12px; /* Smaller bottom text */
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 8px; /* Further reduced padding for very small devices */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2px; /* Reduced gap further */
+    }
+
+    .footer-section {
+        min-width: 120px; /* Further reduced width */
+        padding: 3px; /* Reduced padding */
+    }
+
+    .footer-section h3 {
+        font-size: 1.1em; /* Keep the smaller font size */
+        margin-bottom: 3px; /* Further reduced margin */
+    }
+
+    .footer-contact i {
+        font-size: 12px; /* Smaller icon size */
+    }
+
+    .social-link {
+        font-size: 14px; /* Even smaller social media icon size */
+    }
+
+    .footer-bottom {
+        font-size: 8px; /* Very small font for bottom section */
+    }
+}

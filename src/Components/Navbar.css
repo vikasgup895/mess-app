@@ -1,0 +1,102 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  font-size: 2rem; /* Increased font size for general text */
+}
+
+/* Navbar Styling */
+.navbar {
+  background-color: #343a40; /* Dark background for the navbar */
+  height: 6rem;
+}
+
+.navbar-nav {
+  display: flex; /* Align items horizontally */
+  margin-left: auto; /* Align the nav items to the right */
+}
+
+.navbar-nav .nav-item {
+  margin-right: 1.25rem; /* Add space between the nav items */
+}
+
+.navbar-nav .nav-link {
+  color: white; /* Text color */
+  font-size: 1.2rem; /* Increased font size for navbar links */
+  padding: 10px 20px; /* Padding around the link */
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #495057; /* Slightly lighter background on hover */
+}
+
+.navbar-toggler {
+  border: none; /* Remove border */
+}
+
+.navbar-toggler-icon {
+  background-color: white; /* Change the color of the toggler icon */
+}
+
+.navbar-collapse {
+  justify-content: flex-end; /* Align the navbar items to the right */
+}
+
+.navbar-nav-scroll {
+  max-height: 50vh; /* Allow scrolling if the nav items overflow */
+  overflow-y: auto;
+}
+
+.dropdown-menu {
+  background-color: #343a40; /* Same background as the navbar */
+  border: none;
+}
+
+.dropdown-item {
+  font-size: 1.2rem; /* Increased font size for dropdown items */
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.dropdown-item:hover {
+  background-color: #495057; /* Hover effect for dropdown items */
+}
+
+/* Additional Mobile Styles */
+@media (max-width: 767px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack navbar items vertically on small screens */
+    align-items: center; /* Center items */
+  }
+
+  /* Increase font size for navbar links in mobile */
+  .navbar-nav .nav-link {
+    font-size: 1.3rem; /* Increased font size for navbar links in mobile */
+    padding: 10px 15px; /* Adjust padding for better touch targets */
+  }
+
+  /* Adjust navbar height on small screens */
+  .navbar {
+    height: auto; /* Allow navbar height to adjust for smaller screens */
+    padding: 1rem; /* Add some padding to prevent content from sticking to the edges */
+  }
+
+  /* Ensure the dropdown items are large enough for touch */
+  .dropdown-item {
+    font-size: 1.3rem; /* Increased font size for easier touch navigation */
+    padding: 1.5rem 2rem; /* Larger padding for better touch target */
+  }
+
+  /* Ensure dropdown menu is full width on small screens */
+  .dropdown-menu {
+    width: 100%; /* Make dropdown menu take the full width on small screens */
+  }
+
+  /* Ensure the navbar toggler icon is larger on mobile */
+  .navbar-toggler-icon {
+    background-color: rgb(36, 35, 35);
+    width: 2rem; /* Increase the size of the toggler icon */
+    height: 2rem;
+  }
+}
