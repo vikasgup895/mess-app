@@ -1,0 +1,76 @@
+/* Styles for UserLogin page */
+.user-login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f4f4f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-title {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-container {
+    margin-bottom: 15px;
+  }
+  
+  .input-label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .input-field:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  .login-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .other-options {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .register-link,
+  .forgot-password-link {
+    color: #4caf50;
+    text-decoration: none;
+  }
+  
+  .register-link:hover,
+  .forgot-password-link:hover {
+    text-decoration: underline;
+  }
+  

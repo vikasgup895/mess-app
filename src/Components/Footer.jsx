@@ -10,7 +10,7 @@ const Footer = () => {
            <div class="footer-section">
             <h3>About ABESEC Hostel Mess</h3>
             <p>We treat people the way we want to be treated.</p>
-            <p>We prioritize hygiene, quality, and variety in our food services to ensure that students feel at home.</p>
+           <p> We prioritize hygiene, quality, and variety in our food services to ensure that students feel at home.</p>
         </div>
 {/*     Quick Links Section  */}
         <div class="footer-section">
@@ -40,13 +40,11 @@ const Footer = () => {
             </div>
         </div>
     </div>
-
     {/* <!-- Footer Bottom --> */}
     <div class="footer-bottom">
         <p>&copy; 2024 ABESEC Hostel Mess - All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </div>
 </footer>
-
   )
 }
 
