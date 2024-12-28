@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import Home from './Components/Home'; // Import Home component
+import Home from './Components/Home';
 
 // Placeholder components for other routes
 const UserLogin = () => <div>User Login Page</div>;
@@ -15,20 +15,9 @@ const Contact = () => <div>Contact Us Page</div>;
 const About = () => <div>About Us Page</div>;
 
 const App = () => {
-  const location = useLocation(); // Get the current location
-
-  // Define routes where Navbar and Footer should NOT appear
-  const noNavbarFooterRoutes = ['/user-login', '/admin-login'];
-
-  // Check if the current route matches the restricted routes
-  const shouldHideNavbarFooter = noNavbarFooterRoutes.includes(location.pathname);
-
   return (
     <div>
-      {/* Conditionally render Navbar */}
-      {!shouldHideNavbarFooter && <Navbar />}
-
-      {/* Routes */}
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/user-login" element={<UserLogin />} />
@@ -40,9 +29,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
       </Routes>
-
-      {/* Conditionally render Footer */}
-      {!shouldHideNavbarFooter && <Footer />}
+      <Footer />
     </div>
   );
 };

@@ -11,7 +11,12 @@ body {
   background-color: #343a40; /* Dark background for the navbar */
   height: 6rem;
 }
-
+.navbar-brand{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+}
 .navbar-nav {
   display: flex; /* Align items horizontally */
   margin-left: auto; /* Align the nav items to the right */
