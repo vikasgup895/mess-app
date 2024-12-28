@@ -46,7 +46,6 @@ const UserLogin = () => {
       </form>
 
       <div className="other-options">
-        <p>Don't have an account? <Link to="/user-register" className="register-link">Sign up</Link></p>
         <p><Link to="/forgot-password" className="forgot-password-link">Forgot Password?</Link></p>
       </div>
     </div>

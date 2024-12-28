@@ -2,7 +2,7 @@
 .user-login-container {
     width: 100%;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 100px auto;
     padding: 20px;
     border-radius: 8px;
     background-color: #f4f4f9;
@@ -63,13 +63,11 @@
     text-align: center;
   }
   
-  .register-link,
   .forgot-password-link {
     color: #4caf50;
     text-decoration: none;
   }
   
-  .register-link:hover,
   .forgot-password-link:hover {
     text-decoration: underline;
   }
