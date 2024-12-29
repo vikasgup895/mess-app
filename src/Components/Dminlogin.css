@@ -1,7 +1,5 @@
-
-  
-  /* Container for the login box */
-  .login-container {
+/* Container for the login box */
+.login-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,4 +82,3 @@
   .footer-links a:hover {
     text-decoration: underline;
   }
-  

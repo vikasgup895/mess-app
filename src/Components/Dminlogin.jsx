@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Adminlogin.css';
+import './DminLogin.css';
 
-const AdminLogin = () => {
+const DminLogin = () => {
   return (
     <div className="login-container">
       <div className="login-box">
@@ -18,7 +18,6 @@ const AdminLogin = () => {
               required
             />
           </div>
-
           <div className="input-group">
             <label htmlFor="password">Password</label>
             <input
@@ -29,9 +28,7 @@ const AdminLogin = () => {
               required
             />
           </div>
-
           <button type="submit" className="login-btn">Login</button>
-
           <div className="footer-links">
             <p>Don't have an account? <Link to="/register">Register</Link></p>
             <p><Link to="/forgot-password">Forgot Password?</Link></p>
@@ -41,4 +38,5 @@ const AdminLogin = () => {
     </div>
   );
 };
-export default AdminLogin;
+
+export default DminLogin;

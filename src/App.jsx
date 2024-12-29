@@ -2,12 +2,10 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import Home from './Components/Home'; 
-//import Adminlogin from './Components/adminlogin';
-//import UserLogin from './Components/Userlogin';
+import Home from './Components/Home';
+import DminLogin from './Components/DminLogin';
+import UserLogin from './Components/UserLogin';
 
-// Placeholder components for other routes
-const UserLogin = () => <div>User Login Page</div>;
 const Breakfast = () => <div>Breakfast Menu</div>;
 const Lunch = () => <div>Lunch Menu</div>;
 const Snacks = () => <div>Snacks Menu</div>;
@@ -16,24 +14,18 @@ const Contact = () => <div>Contact Us Page</div>;
 const About = () => <div>About Us Page</div>;
 
 const App = () => {
-  const location = useLocation(); // Get the current location
+  const location = useLocation();
 
-  // Define routes where Navbar and Footer should NOT appear
-  const noNavbarFooterRoutes = ['/user-login', '/admin-login'];
-
-  // Check if the current route matches the restricted routes
+  const noNavbarFooterRoutes = ['/Userlogin', '/Dminlogin'];
   const shouldHideNavbarFooter = noNavbarFooterRoutes.includes(location.pathname);
 
   return (
     <div>
-      {/* Conditionally render Navbar */}
       {!shouldHideNavbarFooter && <Navbar />}
-
-      {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Userlogin" element={<UserLogin />} />
-        <Route path="/admin-login" element={<Adminlogin />} /> {/* Directly use the imported Adminlogin */}
+        <Route path="/Dminlogin" element={<DminLogin />} />
         <Route path="/breakfast" element={<Breakfast />} />
         <Route path="/lunch" element={<Lunch />} />
         <Route path="/snacks" element={<Snacks />} />
@@ -41,8 +33,6 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
       </Routes>
-
-      {/* Conditionally render Footer */}
       {!shouldHideNavbarFooter && <Footer />}
     </div>
   );

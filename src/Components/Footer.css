@@ -14,7 +14,8 @@ footer {
     justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: left; /* Ensure left alignment of content */
+    text-align: left;
+    max-height: 100%; /* Ensure left alignment of content */
 }
 
 /* Footer Sections */
@@ -22,6 +23,8 @@ footer {
     flex: 1;
     min-width: 150px; /* Further reduced min-width for smaller screens */
     margin-bottom: 10px; /* Reduced padding */
+    margin-left: 0%;
+    margin-right: 0%;
 }
 
 .footer-section h3 {
@@ -33,6 +36,7 @@ footer {
     display: inline-block;
     padding-bottom: 5px;
     text-align: left;
+   
 }
 
 /* Footer Links */

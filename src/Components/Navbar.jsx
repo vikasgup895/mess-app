@@ -23,10 +23,10 @@ const Navbar = () => {
             <Link className="nav-link active" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/user-login">User Login</Link>
+            <Link className="nav-link active" to="/Userlogin">User Login</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/Adminlogin">Admin Login</Link>
+            <Link className="nav-link active" to="/Dminlogin">Admin Login</Link>
           </li>
           <li className="nav-item dropdown">
             <a
