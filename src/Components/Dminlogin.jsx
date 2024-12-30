@@ -30,7 +30,6 @@ const DminLogin = () => {
           </div>
           <button type="submit" className="login-btn">Login</button>
           <div className="footer-links">
-            <p>Don't have an account? <Link to="/register">Register</Link></p>
             <p><Link to="/forgot-password">Forgot Password?</Link></p>
           </div>
         </form>

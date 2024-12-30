@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import  './Navbar.css';
+import './Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <Link className="navbar-brand" to="/">ABESEC HOSTEL MESS</Link>
+      <Link className="navbar-brand" to="/Home">ABESEC HOSTEL MESS</Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -20,13 +20,13 @@ const Navbar = () => {
       <div className="collapse navbar-collapse" id="navbarScroll">
         <ul className="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
           <li className="nav-item">
-            <Link className="nav-link active" to="/">Home</Link>
+            <Link className="nav-link active" to="/Home">Home</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link active" to="/Userlogin">User Login</Link>
+            <Link className="nav-link" to="/Userlogin">User Login</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link active" to="/Dminlogin">Admin Login</Link>
+            <Link className="nav-link" to="/Dminlogin">Admin Login</Link>
           </li>
           <li className="nav-item dropdown">
             <a
@@ -49,7 +49,7 @@ const Navbar = () => {
             <Link className="nav-link" to="/contact">Contact Us</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/about">About</Link>
+            <Link className="nav-link" to="/AboutUs">About</Link>
           </li>
         </ul>
       </div>
