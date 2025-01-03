@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-const Navbar = () => {
+const Navbar = ({ onContactClick }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/Home">ABESEC HOSTEL MESS</Link>
@@ -46,7 +46,9 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/Footer">Contact Us</Link>
+            <button className="nav-link btn btn-link" onClick={onContactClick}>
+              Contact Us
+            </button>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/AboutUs">About</Link>

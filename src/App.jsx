@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import Home from './Components/Home'; 
+import Home from './Components/Home';
 import DminLogin from './Components/Dminlogin';
 import UserLogin from './Components/Userlogin';
 import AboutUs from './Components/AboutUs';
@@ -15,12 +15,26 @@ const Contact = () => <div>Contact Us Page</div>;
 
 const App = () => {
   const location = useLocation();
-  const noNavbarFooterRoutes = ['/Userlogin', '/admin-login'];
+  const navigate = useNavigate();
+  const footerRef = useRef(null);
+
+  const noNavbarFooterRoutes = ['/Userlogin', '/DminLogin'];
   const shouldHideNavbarFooter = noNavbarFooterRoutes.includes(location.pathname);
+
+  const handleContactClick = () => {
+    if (location.pathname === '/Home' && footerRef.current) {
+      footerRef.current.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/Home');
+      setTimeout(() => {
+        footerRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 100); // Delay to allow navigation to complete
+    }
+  };
 
   return (
     <div>
-      {!shouldHideNavbarFooter && <Navbar />}
+      {!shouldHideNavbarFooter && <Navbar onContactClick={handleContactClick} />}
       <Routes>
         <Route path="/Home" element={<Home />} />
         <Route path="/Userlogin" element={<UserLogin />} />
@@ -32,7 +46,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/AboutUs" element={<AboutUs />} />
       </Routes>
-      {!shouldHideNavbarFooter && <Footer />}
+      {!shouldHideNavbarFooter && <Footer ref={footerRef} />}
     </div>
   );
 };
@@ -44,4 +58,3 @@ const MainApp = () => (
 );
 
 export default MainApp;
-

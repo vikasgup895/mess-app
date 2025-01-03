@@ -1,3 +1,4 @@
+/* General styles */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -7,21 +8,47 @@ body {
 
 .home {
   text-align: center;
-  padding: 0 20px;
   padding: 2%;
 }
 
-.slider-container {
-  margin: 20px 0;
-}
-
+/* Slider image styles */
 .slider-image {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
+  height: 600px;
+  object-fit: cover; /* Ensures the image scales properly without distortion */
+  border-radius: 10px; /* Smooth corners */
+  filter: brightness(1.05) contrast(1.1); /* Slightly enhance brightness and contrast */
+  transition: transform 0.3s, filter 0.3s; /* Add a smooth transition effect */
 }
 
+.slider-image:hover {
+  transform: scale(1.01); /* Very slight zoom effect on hover */
+  filter: brightness(1.1) contrast(1.15); /* Subtle hover effect */
+}
+
+/* Slider container styles */
+.slider-container {
+  margin: 20px 0;
+  overflow: hidden; /* Prevents content overflow from animations */
+  border-radius: 10px; /* Ensures the hover effect respects rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for better aesthetics */
+}
+
+/* Slick dots customization */
+.slick-dots {
+  bottom: -20px; /* Adjust the position of the dots */
+}
+
+.slick-dots li button:before {
+  font-size: 10px; /* Adjust the size of the dots */
+  color: #2980b9; /* Dot color */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #1a5480; /* Active dot color */
+}
+
+/* Welcome section */
 .welcome-section {
   background-color: #f9d2d2;
   padding: 30px 20px;
@@ -39,12 +66,13 @@ body {
   line-height: 1.6;
 }
 
+/* Lookup section */
 .lookup-section {
   display: flex;
   justify-content: space-around;
   gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-top: 50px; /* Add margin to separate from dots */
   padding: 2%;
 }
 
@@ -79,4 +107,31 @@ body {
 
 .lookup-card button:hover {
   background-color: #1a5480;
+}
+
+/* Responsive styles for smaller devices */
+@media (max-width: 768px) {
+  .slider-image {
+    height: auto; /* Ensures image scales naturally */
+    object-fit: contain; /* Displays the entire image without cropping */
+  }
+
+  .slider-container {
+    margin-bottom: 30px; /* Space below slider */
+  }
+
+  .slick-dots {
+    bottom: 10px; /* Adjust position of dots on mobile */
+  }
+
+  .lookup-section {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center; /* Center align the cards */
+    margin-top: 30px; /* Add space to separate from dots */
+  }
+
+  .lookup-card {
+    width: 90%; /* Make cards take up most of the screen width */
+    margin-bottom: 20px;
+  }
 }
