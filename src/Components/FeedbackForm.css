@@ -1,0 +1,132 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f3f5;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+/* Ensure content area takes remaining space */
+.main-content {
+    flex-grow: 1;
+    padding-top: 10px; /* Adjust according to navbar height */
+    padding-bottom: 10px; /* Adjust according to footer height */
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+}
+
+/* Container Styling */
+.feedback-container {
+    background-color: #fff;
+    padding: 15px; /* Further reduced padding */
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Reduced max-width for a smaller form */
+    text-align: center;
+    margin: 20px; /* Ensures some space on smaller screens */
+}
+
+/* Form Title */
+.form-title {
+  font-size: 1.6rem; /* Reduced font size */
+  color: #343a40;
+  margin-bottom: 8px; /* Further reduced margin */
+  font-weight: 600;
+}
+
+/* Form Styling */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduced gap further */
+}
+
+/* Input Group */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.input-group label {
+  font-size: 0.9rem; /* Reduced label font size */
+  color: #343a40;
+  margin-bottom: 6px; /* Reduced margin */
+}
+
+/* Input, Select, and Textarea Styling */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px; /* Reduced padding inside input fields */
+  margin-top: 5px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem; /* Reduced font size */
+  color: #495057;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus State Styling */
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #f8b400;
+  outline: none;
+}
+
+/* Textarea Styling */
+textarea {
+  resize: vertical;
+}
+
+/* Submit Button Styling */
+.submit-btn {
+  background-color: #f8b400;
+  color: white;
+  padding: 10px 16px; /* Reduced padding */
+  font-size: 0.9rem; /* Reduced font size */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px; /* Reduced margin */
+}
+
+.submit-btn:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+/* Hover Effect for Inputs */
+input[type="text"]:hover,
+select:hover,
+textarea:hover {
+  border-color: #f8b400;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .feedback-container {
+    padding: 10px; /* Further reduced padding for mobile */
+  }
+
+  .form-title {
+    font-size: 1.3rem; /* Reduced font size for mobile */
+  }
+
+  .input-group label {
+    font-size: 0.8rem; /* Reduced label font size for mobile */
+  }
+
+  .submit-btn {
+    padding: 8px 12px; /* Reduced padding for mobile */
+    font-size: 0.8rem; /* Reduced font size for mobile */
+  }
+}

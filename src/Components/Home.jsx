@@ -14,7 +14,11 @@ const Home = () => {
   const handleTodayMenuClick = () => {
     // Navigate to the Today Menu page when the button is clicked
     navigate('/TodayMenu'); // This redirects to the '/today-menu' path
+
   };
+ const handleFeedbackFormClick = () => {
+  navigate('/FeedbackForm'); // Navigate to the Feedback Form
+};
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -69,7 +73,7 @@ const Home = () => {
         <div className="lookup-card">
           <h2>Contact Us</h2>
           <p>Have queries or feedback? We'd love to hear from you!</p>
-          <button className="contact-us-button">Get in Touch</button>
+          <button onClick={handleFeedbackFormClick} className="contact-us-button">Get in Touch</button>
         </div>
       </div>
     </div>

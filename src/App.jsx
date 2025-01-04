@@ -8,7 +8,7 @@ import UserLogin from './Components/Userlogin';
 import AboutUs from './Components/AboutUs';
 import TodayMenu from './Components/TodayMenu';
 import WeekMenu from './Components/WeekMenu';
-
+import FeedbackForm from './Components/FeedbackForm'; 
 
 const Contact = () => <div>Contact Us Page</div>;
 
@@ -42,6 +42,7 @@ const App = () => {
         <Route path="/WeekMenu" element={<WeekMenu />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/AboutUs" element={<AboutUs />} />
+        <Route path="/FeedbackForm" element={<FeedbackForm />} />
       </Routes>
       {!shouldHideNavbarFooter && <Footer ref={footerRef} />}
     </div>
