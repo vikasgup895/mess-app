@@ -1,0 +1,187 @@
+/* General Styling for WeekMenu Component */
+.week-menu-container {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Ensures items stack vertically */
+    justify-content: flex-start; /* Aligns content to the top */
+    align-items: center; /* Centers content horizontally */
+    min-height: 100vh;
+}
+
+.week-menu-container h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    background-color: #f8b400;
+    padding: 10px 20px;
+    border-radius: 8px;
+    width: 100%; /* Ensures heading spans full width */
+    max-width: 1200px; /* Keeps it from becoming too wide */
+    display: flex;
+    justify-content: center; /* Center heading horizontally */
+    margin-top: 20px; /* Adds space from top */
+}
+
+
+.week-menu-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.week-menu-container li {
+    background-color: #fff;
+    margin: 10px 0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.week-menu-container li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.week-menu-container h2 {
+    color: #f8b400;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.week-menu-container ul li ul {
+    margin-top: 10px;
+}
+
+.week-menu-container ul li ul li {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.week-menu-container strong {
+    color: #333;
+}
+
+/* Hover effect for items */
+.week-menu-container ul li:hover h2 {
+    color: #f0a500;
+}
+
+.week-menu-container ul li:hover strong {
+    color: #f8b400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .week-menu-container h1 {
+        font-size: 2em;
+    }
+
+    .week-menu-container ul {
+        width: 100%;
+        padding-left: 15px;
+    }
+
+    .week-menu-container li {
+        padding: 15px;
+    }
+
+    .week-menu-container h2 {
+        font-size: 1.2em;
+    }
+
+    .week-menu-container ul li ul li {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .week-menu-container h1 {
+        font-size: 1.5em;
+        padding: 8px 15px;
+    }
+
+    .week-menu-container li {
+        padding: 12px;
+    }
+
+    .week-menu-container h2 {
+        font-size: 1.1em;
+    }
+
+    .week-menu-container ul li ul li {
+        font-size: 0.95em;
+    }
+}
+
+/* Background Images for different days (optional) 
+.week-menu-container li.Monday {
+    background-image: url('path_to_monday_image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.week-menu-container li.Tuesday {
+    background-image: url('https://images.pexels.com/photos/13063292/pexels-photo-13063292.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;
+    background-position: center;
+}
+
+.week-menu-container li.Wednesday {
+    background-image: url('path_to_wednesday_image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.week-menu-container li.Thursday {
+    background-image: url('path_to_thursday_image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.week-menu-container li.Friday {
+    background-image: url('path_to_friday_image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.week-menu-container li.Saturday {
+    background-image: url('path_to_saturday_image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.week-menu-container li.Sunday {
+    background-image: url('path_to_sunday_image.jpg');
+    background-size: cover;
+    background-position: center;
+} */
+
+/* Add a transparent overlay for text readability */
+.week-menu-container li.Monday::after,
+.week-menu-container li.Tuesday::after,
+.week-menu-container li.Wednesday::after,
+.week-menu-container li.Thursday::after,
+.week-menu-container li.Friday::after,
+.week-menu-container li.Saturday::after,
+.week-menu-container li.Sunday::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}

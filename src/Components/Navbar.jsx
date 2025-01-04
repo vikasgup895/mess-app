@@ -25,9 +25,9 @@ const Navbar = ({ onContactClick }) => {
           <li className="nav-item">
             <Link className="nav-link" to="/Userlogin">User Login</Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link className="nav-link" to="/Dminlogin">Admin Login</Link>
-          </li>
+          </li> */}
           <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
@@ -38,11 +38,13 @@ const Navbar = ({ onContactClick }) => {
             >
               Mess Menu
             </a>
-            <ul className="dropdown-menu">
-              <li><Link className="dropdown-item" to="/breakfast">Breakfast</Link></li>
-              <li><Link className="dropdown-item" to="/lunch">Lunch</Link></li>
-              <li><Link className="dropdown-item" to="/snacks">Snacks</Link></li>
-              <li><Link className="dropdown-item" to="/dinner">Dinner</Link></li>
+            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li>
+                <Link className="dropdown-item" to="/TodayMenu">Today's Menu</Link>
+              </li>
+              <li>
+                <Link className="dropdown-item" to="/WeekMenu">Weekly Menu</Link>
+              </li>
             </ul>
           </li>
           <li className="nav-item">
@@ -51,7 +53,7 @@ const Navbar = ({ onContactClick }) => {
             </button>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/AboutUs">About</Link>
+            <Link className="nav-link" to="/AboutUs">About Us</Link>
           </li>
         </ul>
       </div>

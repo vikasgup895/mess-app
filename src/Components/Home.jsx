@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -6,12 +7,14 @@ import "slick-carousel/slick/slick-theme.css";
 import slider1 from './Image/slider1.png';
 import slider2 from './Image/slider2.jpg';
 import slider3 from './Image/slider3.jpeg';
-import QRCode from 'qrcode.react'; // Import the QR Code component
 
 const Home = () => {
-  const [qrCodeData, setQrCodeData] = useState(null);
-  const [qrCodeValidUntil, setQrCodeValidUntil] = useState(null);
+  const navigate = useNavigate(); // Initialize the navigate function for React Router v6
 
+  const handleTodayMenuClick = () => {
+    // Navigate to the Today Menu page when the button is clicked
+    navigate('/TodayMenu'); // This redirects to the '/today-menu' path
+  };
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -22,20 +25,9 @@ const Home = () => {
     autoplaySpeed: 3000,
   };
 
-  // Function to generate the QR code and make it valid for 3 hours
-  const handleGenerateQRCode = () => {
-    const currentTimestamp = Date.now(); // Get current time in milliseconds
-    const expirationTimestamp = currentTimestamp + 3 * 60 * 60 * 1000; // Add 3 hours
-
-    // Set QR code data with expiration timestamp
-    setQrCodeData(`Valid until: ${new Date(expirationTimestamp).toLocaleString()}`);
-
-    // Set the valid until timestamp (for demo purposes)
-    setQrCodeValidUntil(new Date(expirationTimestamp).toLocaleString());
-  };
-
   return (
     <div className="home">
+      {/* Welcome Section */}
       <div className="welcome-section">
         <h1>Welcome to ABSEC Hostel Mess Service</h1>
         <p>
@@ -44,6 +36,7 @@ const Home = () => {
         </p>
       </div>
 
+      {/* Image Slider Section */}
       <div>
         <Slider {...sliderSettings}>
           <div className="slider-container">
@@ -58,34 +51,25 @@ const Home = () => {
         </Slider>
       </div>
 
+      {/* Lookup Section */}
       <div className="lookup-section">
         <div className="lookup-card">
           <h2>Today Menu</h2>
           <p>Explore our variety-packed menu designed to make every meal exciting.</p>
-          <button style={{ marginTop: '-10px' }}>View Menu</button>
+          <button onClick={handleTodayMenuClick} className="view-menu-button">View Menu</button>
         </div>
+        
+        {/* New Card for QR Code Generation */}
         <div className="lookup-card">
-          <h2>Scan QR</h2>
-          <p>Access services quickly by scanning our QR code.</p>
-          <button 
-            style={{ marginTop: '-10px' }} 
-            onClick={handleGenerateQRCode}
-          >
-            Generate QR Code
-          </button>
-
-          {/* Display the QR code if it's generated */}
-          {qrCodeData && (
-            <div className="qr-code-container">
-              <QRCode value={qrCodeData} size={256} />
-              <p>QR Code Valid Until: {qrCodeValidUntil}</p>
-            </div>
-          )}
+          <h2>Generate QR for Meal</h2>
+          <p>Generate a QR code for your meal to make the Entry process easier.</p>
+          <button className="generate-qr-button">Generate QR Code</button>
         </div>
+
         <div className="lookup-card">
           <h2>Contact Us</h2>
-          <p>Have queries or feedback? We’d love to hear from you!</p>
-          <button style={{ marginTop: '-10px' }}>Get in Touch</button>
+          <p>Have queries or feedback? We'd love to hear from you!</p>
+          <button className="contact-us-button">Get in Touch</button>
         </div>
       </div>
     </div>
@@ -93,4 +77,3 @@ const Home = () => {
 };
 
 export default Home;
-

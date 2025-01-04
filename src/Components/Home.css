@@ -1,137 +1,130 @@
-/* General styles */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #726363;
-  color: #333;
-}
-
+/* General Styling for the Home Component */
 .home {
-  text-align: center;
-  padding: 2%;
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
 
-/* Slider image styles */
-.slider-image {
-  width: 100%;
-  height: 600px;
-  object-fit: cover; /* Ensures the image scales properly without distortion */
-  border-radius: 10px; /* Smooth corners */
-  filter: brightness(1.05) contrast(1.1); /* Slightly enhance brightness and contrast */
-  transition: transform 0.3s, filter 0.3s; /* Add a smooth transition effect */
-}
-
-.slider-image:hover {
-  transform: scale(1.01); /* Very slight zoom effect on hover */
-  filter: brightness(1.1) contrast(1.15); /* Subtle hover effect */
-}
-
-/* Slider container styles */
-.slider-container {
-  margin: 20px 0;
-  overflow: hidden; /* Prevents content overflow from animations */
-  border-radius: 10px; /* Ensures the hover effect respects rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for better aesthetics */
-}
-
-/* Slick dots customization */
-.slick-dots {
-  bottom: -20px; /* Adjust the position of the dots */
-}
-
-.slick-dots li button:before {
-  font-size: 10px; /* Adjust the size of the dots */
-  color: #2980b9; /* Dot color */
-}
-
-.slick-dots li.slick-active button:before {
-  color: #1a5480; /* Active dot color */
-}
-
-/* Welcome section */
+/* Welcome Section */
 .welcome-section {
-  background-color: #f9d2d2;
-  padding: 30px 20px;
-  border-radius: 10px;
-  margin-bottom: 30px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .welcome-section h1 {
-  margin-bottom: 15px;
-  color: #2c3e50;
+  font-size: 2.5rem;
+  color: #1a73e8;
+  margin-bottom: 20px;
 }
 
 .welcome-section p {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
-/* Lookup section */
+/* Image Slider Section */
+.slick-slider {
+  margin-top: 30px;
+}
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Lookup Section */
 .lookup-section {
   display: flex;
   justify-content: space-around;
-  gap: 20px;
+  margin-top: 40px;
   flex-wrap: wrap;
-  margin-top: 50px; /* Add margin to separate from dots */
-  padding: 2%;
 }
 
 .lookup-card {
-  background-color: #e6baba;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  background-color: #fff;
   padding: 20px;
-  width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  width: 280px;
+  text-align: center;
 }
 
 .lookup-card h2 {
-  margin-bottom: 10px;
-  color: #2980b9;
+  color: #1a73e8;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
 .lookup-card p {
+  color: #555;
+  font-size: 1rem;
   margin-bottom: 20px;
-  font-size: 14px;
 }
 
-.lookup-card button {
-  padding: 10px 20px;
-  background-color: #2980b9;
-  color: #fff;
+.view-menu-button,
+.generate-qr-button,
+.contact-us-button {
+  background-color: #1a73e8;
+  color: white;
   border: none;
+  padding: 10px 20px;
   border-radius: 5px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
 }
 
-.lookup-card button:hover {
-  background-color: #1a5480;
+.view-menu-button:hover,
+.generate-qr-button:hover,
+.contact-us-button:hover {
+  background-color: #155a8a;
 }
 
-/* Responsive styles for smaller devices */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .slider-image {
-    height: auto; /* Ensures image scales naturally */
-    object-fit: contain; /* Displays the entire image without cropping */
+  .welcome-section h1 {
+    font-size: 2rem;
   }
 
-  .slider-container {
-    margin-bottom: 30px; /* Space below slider */
-  }
-
-  .slick-dots {
-    bottom: 10px; /* Adjust position of dots on mobile */
+  .welcome-section p {
+    font-size: 1rem;
   }
 
   .lookup-section {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center align the cards */
-    margin-top: 30px; /* Add space to separate from dots */
+    flex-direction: column;
+    align-items: center;
   }
 
   .lookup-card {
-    width: 90%; /* Make cards take up most of the screen width */
-    margin-bottom: 20px;
+    width: 90%;
+  }
+
+  .slider-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lookup-card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .view-menu-button,
+  .generate-qr-button,
+  .contact-us-button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
   }
 }

@@ -19,10 +19,10 @@ const Footer = forwardRef((props, ref) => (
         <h3>Quick Links</h3>
         <ul className="footer-links">
           <li><Link to="/Home"><i className="fas fa-chevron-right"></i> Home</Link></li>
-          <li><Link to="/breakfast"><i className="fas fa-chevron-right"></i> Menu</Link></li>
+          <li><Link to="/WeekMenu"><i className="fas fa-chevron-right"></i> Menu</Link></li>
           <li><Link to="/AboutUs"><i className="fas fa-chevron-right"></i> About Us</Link></li>
-          <li><button className="btn btn-link" onClick={props.onContactClick}><i className="fas fa-chevron-right"></i> Contact</button></li>
-        </ul>
+{/*           <li><button className="btn btn-link" onClick={props.onContactClick}><i className="fas fa-chevron-right"></i> Contact</button></li>
+ */}        </ul>
       </div>
       {/* Contact Us Section */}
       <div className="footer-section">
