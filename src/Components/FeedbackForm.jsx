@@ -4,7 +4,8 @@ import './FeedbackForm.css';
 const FeedbackForm = () => {
   const [formData, setFormData] = useState({
     name: '',
-    rollNo: '',
+    admissionNo: '',
+    roomNo: '',
     foodQuality: 'excellent',
     taste: 'excellent',
     variety: 'excellent',
@@ -25,7 +26,8 @@ const FeedbackForm = () => {
     alert('Feedback submitted successfully!');
     setFormData({
       name: '',
-      rollNo: '',
+      admissionNo: '',
+      roomNo: '',
       foodQuality: 'excellent',
       taste: 'excellent',
       variety: 'excellent',
@@ -53,17 +55,29 @@ const FeedbackForm = () => {
         </div>
 
         <div className="input-group">
-          <label htmlFor="rollNo">Roll Number:</label>
+          <label htmlFor="admissionNo">admission Number:</label>
           <input
             type="text"
-            id="rollNo"
-            name="rollNo"
-            value={formData.rollNo}
+            id="admissionNo"
+            name="admissionNo"
+            value={formData.admissionNo}
             onChange={handleChange}
-            placeholder="Enter your roll number"
+            placeholder="Enter your admission number"
             required
           />
         </div>
+        <div className="input-group">
+          <label htmlFor="roomNo">Room Number:</label>
+          <input
+            type="text"
+            id="roomNo"
+            name="roomNo"
+            value={formData.roomNo}
+            onChange={handleChange}
+            placeholder="Enter your room number"
+            required
+          />
+          </div>
 
         <div className="input-group">
           <label htmlFor="foodQuality">Food Quality:</label>
