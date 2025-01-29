@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import FeedbackForm from './FeedbackForm'; // Import FeedbackForm component
 import './Home.css';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -9,16 +10,21 @@ import slider2 from './Image/slider2.jpg';
 import slider3 from './Image/slider3.jpeg';
 
 const Home = () => {
-  const navigate = useNavigate(); // Initialize the navigate function for React Router v6
+  const navigate = useNavigate(); 
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false); // State for feedback popup
 
   const handleTodayMenuClick = () => {
-    // Navigate to the Today Menu page when the button is clicked
-    navigate('/TodayMenu'); // This redirects to the '/today-menu' path
-
+    navigate('/TodayMenu');
   };
- const handleFeedbackFormClick = () => {
-  navigate('/FeedbackForm'); // Navigate to the Feedback Form
-};
+
+  const handleFeedbackFormClick = () => {
+    setIsFeedbackOpen(true); // Open the popup when "Get in Touch" is clicked
+  };
+
+  const closeFeedbackForm = () => {
+    setIsFeedbackOpen(false); // Close the popup
+  };
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -34,7 +40,7 @@ const Home = () => {
       {/* Welcome Section */}
       <div className="welcome-section">
         <h1>Welcome to ABSEC Hostel Mess Service</h1>
-        <p>
+       <p>
           Enjoy nutritious and delicious meals every day. Our menu is tailored to meet 
           your taste and health needs.
         </p>
@@ -62,8 +68,7 @@ const Home = () => {
           <p>Explore our variety-packed menu designed to make every meal exciting.</p>
           <button onClick={handleTodayMenuClick} className="view-menu-button">View Menu</button>
         </div>
-        
-        {/* New Card for QR Code Generation */}
+
         <div className="lookup-card">
           <h2>Generate QR for Meal</h2>
           <p>Generate a QR code for your meal to make the Entry process easier.</p>
@@ -76,6 +81,9 @@ const Home = () => {
           <button onClick={handleFeedbackFormClick} className="contact-us-button">Get in Touch</button>
         </div>
       </div>
+
+      {/* Feedback Popup */}
+      {isFeedbackOpen && <FeedbackForm closePopup={closeFeedbackForm} />}
     </div>
   );
 };

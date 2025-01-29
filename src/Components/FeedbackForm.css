@@ -1,132 +1,194 @@
-/* General Styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f1f3f5;
-    margin: 0;
+/* Feedback Section (Scoped to Form Only) */
+.popup {
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 10px;
+    color: #333;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+
+/* Show Popup */
+.popup.active {
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+/* Blur Effect on Submit */
+.popup.blur {
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+/* Popup Content */
+.popup-content {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
-}
-
-/* Ensure content area takes remaining space */
-.main-content {
-    flex-grow: 1;
-    padding-top: 10px; /* Adjust according to navbar height */
-    padding-bottom: 10px; /* Adjust according to footer height */
-    text-align: center;
-    display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-}
-
-/* Container Styling */
-.feedback-container {
-    background-color: #fff;
-    padding: 15px; /* Further reduced padding */
-    border-radius: 8px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px; /* Reduced max-width for a smaller form */
-    text-align: center;
-    margin: 20px; /* Ensures some space on smaller screens */
+    gap: 5px;
 }
 
 /* Form Title */
 .form-title {
-  font-size: 1.6rem; /* Reduced font size */
-  color: #343a40;
-  margin-bottom: 8px; /* Further reduced margin */
-  font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-bottom: 1px;
 }
 
-/* Form Styling */
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px; /* Reduced gap further */
-}
-
-/* Input Group */
+/* Input Fields */
 .input-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 5px;
 }
 
 .input-group label {
-  font-size: 0.9rem; /* Reduced label font size */
-  color: #343a40;
-  margin-bottom: 6px; /* Reduced margin */
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+    color: #333;
 }
 
-/* Input, Select, and Textarea Styling */
-input[type="text"],
-select,
-textarea {
-  width: 100%;
-  padding: 10px; /* Reduced padding inside input fields */
-  margin-top: 5px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 0.9rem; /* Reduced font size */
-  color: #495057;
-  transition: border-color 0.3s ease;
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.85rem;
 }
 
-/* Focus State Styling */
-input[type="text"]:focus,
-select:focus,
-textarea:focus {
-  border-color: #f8b400;
-  outline: none;
+/* Adjust textarea height */
+.input-group textarea {
+    resize: none;
+    height: 70px;
 }
 
-/* Textarea Styling */
-textarea {
-  resize: vertical;
-}
-
-/* Submit Button Styling */
+/* Submit Button */
 .submit-btn {
-  background-color: #f8b400;
-  color: white;
-  padding: 10px 16px; /* Reduced padding */
-  font-size: 0.9rem; /* Reduced font size */
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  margin-top: 10px; /* Reduced margin */
+    width: 100%;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 5px;
 }
 
 .submit-btn:hover {
-  background-color: #e0a800;
-  transform: scale(1.05);
+    background-color: #43a047;
 }
 
-/* Hover Effect for Inputs */
-input[type="text"]:hover,
-select:hover,
-textarea:hover {
-  border-color: #f8b400;
+
+
+/* Close Button */
+.close-popup-btn {
+    background-color: #d9534f;
+    color: white;
+    padding: 8px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-  .feedback-container {
-    padding: 10px; /* Further reduced padding for mobile */
-  }
+.close-popup-btn:hover {
+    background-color: #c9302c;
+}
 
-  .form-title {
-    font-size: 1.3rem; /* Reduced font size for mobile */
-  }
+/* Thank You Popup */
+.thank-you-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 300px;
+}
 
-  .input-group label {
-    font-size: 0.8rem; /* Reduced label font size for mobile */
-  }
+/* Thank You Image */
+.thank-you-content img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
 
-  .submit-btn {
-    padding: 8px 12px; /* Reduced padding for mobile */
-    font-size: 0.8rem; /* Reduced font size for mobile */
-  }
+/* Thank You Button */
+.thank-you-popup button {
+    background-color: #3cb966;
+    width: 50%;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 450px) {
+    .popup {
+        width: 95%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+        width: 100%;
+        padding: 6px; /* Reduced padding for smaller input fields */
+        font-size: medium; /* Smaller font size for input fields */
+    }
+
+    /* Adjust textarea height */
+    .input-group textarea {
+        resize: none;
+        font-size: medium;
+        height: 80px; /* Reduced height for textarea */
+    }
+
+    .submit-btn {
+        font-size: 0.9rem; /* Smaller font size for submit button */
+        padding: 8px; /* Reduced padding for submit button */
+    }
+
+    .close-popup-btn {
+        font-size: 0.85rem; /* Smaller font size for close button */
+        padding: 7px; /* Reduced padding for close button */
+    }
+
+    .thank-you-popup {
+        width: 90%; /* Adjusted width of thank you popup */
+    }
+  .input-group {
+        margin-bottom: 3px; /* Further reduced gap on mobile */
+    }
+
+    .form-title {
+        font-size: 1.4rem; /* Reduced title font size on mobile */
+    }
+    .thank-you-popup button {
+        font-size: 0.9rem; /* Smaller button text size */
+        padding: 8px 10px; /* Reduced padding for thank you button */
+    }
 }
