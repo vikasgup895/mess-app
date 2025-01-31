@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Navbar.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 
-const Navbar = ({ onContactClick }) => {
+const Navbar = ({ onUserLoginClick }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/Home">ABESEC HOSTEL MESS</Link>
@@ -23,11 +23,10 @@ const Navbar = ({ onContactClick }) => {
             <Link className="nav-link active" to="/Home">Home</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/Userlogin">User Login</Link>
+            <button className="nav-link btn btn-link" onClick={onUserLoginClick}>
+              User Login
+            </button>
           </li>
-          {/* <li className="nav-item">
-            <Link className="nav-link" to="/Dminlogin">Admin Login</Link>
-          </li> */}
           <li className="nav-item dropdown">
             <a
               className="nav-link dropdown-toggle"
@@ -39,18 +38,9 @@ const Navbar = ({ onContactClick }) => {
               Mess Menu
             </a>
             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li>
-                <Link className="dropdown-item" to="/TodayMenu">Today's Menu</Link>
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/WeekMenu">Weekly Menu</Link>
-              </li>
+              <li><Link className="dropdown-item" to="/TodayMenu">Today's Menu</Link></li>
+              <li><Link className="dropdown-item" to="/WeekMenu">Weekly Menu</Link></li>
             </ul>
-          </li>
-          <li className="nav-item">
-            <button className="nav-link btn btn-link" onClick={onContactClick}>
-              Contact Us
-            </button>
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/AboutUs">About Us</Link>

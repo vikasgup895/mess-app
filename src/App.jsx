@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
@@ -16,8 +16,9 @@ const App = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const footerRef = useRef(null);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
 
-  const noNavbarFooterRoutes = ['/Userlogin', '/DminLogin'];
+  const noNavbarFooterRoutes = ['/DminLogin']; // No need to hide Navbar/Footer for UserLogin (as it's a modal)
   const shouldHideNavbarFooter = noNavbarFooterRoutes.includes(location.pathname);
 
   const handleContactClick = () => {
@@ -27,16 +28,18 @@ const App = () => {
       navigate('/Home');
       setTimeout(() => {
         footerRef.current?.scrollIntoView({ behavior: 'smooth' });
-      }, 100); // Delay to allow navigation to complete
+      }, 100);
     }
   };
 
   return (
     <div>
-      {!shouldHideNavbarFooter && <Navbar onContactClick={handleContactClick} />}
+      {!shouldHideNavbarFooter && <Navbar onContactClick={handleContactClick} onUserLoginClick={() => setIsLoginOpen(true)} />}
+      
+      <UserLogin isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
+      
       <Routes>
         <Route path="/Home" element={<Home />} />
-        <Route path="/Userlogin" element={<UserLogin />} />
         <Route path="/Dminlogin" element={<DminLogin />} />
         <Route path="/TodayMenu" element={<TodayMenu />} />
         <Route path="/WeekMenu" element={<WeekMenu />} />
@@ -44,6 +47,7 @@ const App = () => {
         <Route path="/AboutUs" element={<AboutUs />} />
         <Route path="/FeedbackForm" element={<FeedbackForm />} />
       </Routes>
+
       {!shouldHideNavbarFooter && <Footer ref={footerRef} />}
     </div>
   );

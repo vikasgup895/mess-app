@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './FeedbackForm.css';
 import image from './Image/tick.png';
 
-const FeedbackForm = ({ closePopup }) => { // Receive closePopup function
+const FeedbackForm = ({ closePopup }) => {
   const [formData, setFormData] = useState({
     name: '',
     admissionNo: '',
@@ -26,21 +26,22 @@ const FeedbackForm = ({ closePopup }) => { // Receive closePopup function
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsThankYouVisible(true); // Show thank you popup
+    setIsThankYouVisible(true);
     setTimeout(() => {
       setIsThankYouVisible(false);
-      closePopup(); // Close feedback form after showing Thank You message
+      closePopup(); 
     }, 5000);
   };
 
-  // Function to handle closing the Thank You popup
   const handleThankYouClose = () => {
-    setIsThankYouVisible(false); // Hide the Thank You popup
+    setIsThankYouVisible(false);
   };
 
   return (
-    <div className="popup active">
-      <div className={`popup-content ${isThankYouVisible ? 'blur' : ''}`}>
+    <div className="popup">
+      <div className="popup-content">
+        {/* Close Button */}
+        <button className="close-popup-btn" onClick={closePopup}>×</button>
         
         <h1 className="form-title">Hostel Mess Food Feedback</h1>
         <form className="feedback-form" onSubmit={handleSubmit}>
@@ -120,7 +121,6 @@ const FeedbackForm = ({ closePopup }) => { // Receive closePopup function
 
           <button type="submit" className="submit-btn">Submit Feedback</button>
         </form>
-        <button className="close-popup-btn" onClick={closePopup}>Close</button>
       </div>
 
       {/* Thank You Popup */}
